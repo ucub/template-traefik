@@ -24,7 +24,7 @@ defaultEntryPoints = ["https","http"]
 [accesslog]
   filePath = "/var/log/traefik/access.log"
   format = "json"
-##Enable this to see http status filter  
+##Enable this to see http status filter
   # [accessLog.filters]
   #   statusCodes = ["200", "300-302"]
   #   retryAttempts = true
@@ -35,7 +35,7 @@ defaultEntryPoints = ["https","http"]
 #     entryPoint = "metrics"
 
 # [acme]
-# email = "veryniceemail@veryniceemailhosting.com"
+# email = "youremail@mail.com"
 # storage = "acme.json"
 # entryPoint = "https"
 # onHostRule = true
