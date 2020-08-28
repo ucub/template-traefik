@@ -1,0 +1,44 @@
+defaultEntryPoints = ["https","http"]
+# [api]
+#   dashboard = true
+#   insecure = true
+[entryPoints]
+  [entryPoints.http]
+  address = ":80"
+  [entryPoints.https]
+  address = ":443"
+  ##Access prometheus to metrics
+  # [entryPoints.metrics]
+  #   address = ":8082"
+
+[retry]
+[providers.docker]
+  exposedByDefault = false
+  endpoint = "unix:///var/run/docker.sock"
+  watch = true
+
+[log]
+  level = "DEBUG"
+  filePath = "/var/log/traefik/traefik.log"
+  format = "json"
+[accesslog]
+  filePath = "/var/log/traefik/access.log"
+  format = "json"
+##Enable this to see http status filter  
+  # [accessLog.filters]
+  #   statusCodes = ["200", "300-302"]
+  #   retryAttempts = true
+  #   minDuration = "10ms"
+##Expose metric to prometheus
+# [metrics]
+#   [metrics.prometheus]
+#     entryPoint = "metrics"
+
+# [acme]
+# email = "veryniceemail@veryniceemailhosting.com"
+# storage = "acme.json"
+# entryPoint = "https"
+# onHostRule = true
+#
+# [acme.httpChallenge]
+# entryPoint = "http"
