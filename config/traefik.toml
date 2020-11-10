@@ -11,6 +11,15 @@ defaultEntryPoints = ["https","http"]
   # [entryPoints.metrics]
   #   address = ":8082"
 
+## TLS Certificate
+[[tls.certificates]]
+  certFile = "/path/to/domain.cert"
+  keyFile = "/path/to/domain.key"
+
+[[tls.certificates]]
+  certFile = "/path/to/other-domain.cert"
+  keyFile = "/path/to/other-domain.key"
+
 [retry]
 [providers.docker]
   exposedByDefault = false

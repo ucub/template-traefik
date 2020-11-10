@@ -38,3 +38,289 @@
 {"entryPointName":"http","level":"debug","msg":"Entry point http closed","time":"2020-08-29T02:52:38+07:00"}
 {"level":"info","msg":"Server stopped","time":"2020-08-29T02:52:38+07:00"}
 {"level":"info","msg":"Shutting down","time":"2020-08-29T02:52:38+07:00"}
+{"level":"info","msg":"Traefik version 2.2.8 built on 2020-07-28T15:46:03Z","time":"2020-08-30T01:58:42+07:00"}
+{"level":"debug","msg":"Static configuration loaded {\"global\":{\"checkNewVersion\":true},\"serversTransport\":{\"maxIdleConnsPerHost\":200},\"entryPoints\":{\"http\":{\"address\":\":80\",\"transport\":{\"lifeCycle\":{\"graceTimeOut\":10000000000},\"respondingTimeouts\":{\"idleTimeout\":180000000000}},\"forwardedHeaders\":{},\"http\":{}},\"https\":{\"address\":\":443\",\"transport\":{\"lifeCycle\":{\"graceTimeOut\":10000000000},\"respondingTimeouts\":{\"idleTimeout\":180000000000}},\"forwardedHeaders\":{},\"http\":{}}},\"providers\":{\"providersThrottleDuration\":2000000000,\"docker\":{\"watch\":true,\"endpoint\":\"unix:///var/run/docker.sock\",\"defaultRule\":\"Host(`{{ normalize .Name }}`)\",\"swarmModeRefreshSeconds\":15000000000}},\"log\":{\"level\":\"DEBUG\",\"filePath\":\"/var/log/traefik/traefik.log\",\"format\":\"json\"},\"accessLog\":{\"filePath\":\"/var/log/traefik/access.log\",\"format\":\"json\",\"filters\":{},\"fields\":{\"defaultMode\":\"keep\",\"headers\":{\"defaultMode\":\"drop\"}}}}","time":"2020-08-30T01:58:42+07:00"}
+{"level":"info","msg":"\nStats collection is disabled.\nHelp us improve Traefik by turning this feature on :)\nMore details on: https://docs.traefik.io/contributing/data-collection/\n","time":"2020-08-30T01:58:42+07:00"}
+{"level":"info","msg":"Starting provider aggregator.ProviderAggregator {}","time":"2020-08-30T01:58:42+07:00"}
+{"entryPointName":"http","level":"debug","msg":"Start TCP Server","time":"2020-08-30T01:58:42+07:00"}
+{"entryPointName":"https","level":"debug","msg":"Start TCP Server","time":"2020-08-30T01:58:42+07:00"}
+{"level":"info","msg":"Starting provider *traefik.Provider {}","time":"2020-08-30T01:58:42+07:00"}
+{"level":"info","msg":"Starting provider *docker.Provider {\"watch\":true,\"endpoint\":\"unix:///var/run/docker.sock\",\"defaultRule\":\"Host(`{{ normalize .Name }}`)\",\"swarmModeRefreshSeconds\":15000000000}","time":"2020-08-30T01:58:42+07:00"}
+{"level":"debug","msg":"Configuration received from provider internal: {\"http\":{\"services\":{\"noop\":{}}},\"tcp\":{},\"tls\":{}}","providerName":"internal","time":"2020-08-30T01:58:42+07:00"}
+{"level":"debug","msg":"No default certificate, generating one","time":"2020-08-30T01:58:42+07:00"}
+{"level":"debug","msg":"Provider connection established with docker 19.03.12 (API 1.40)","providerName":"docker","time":"2020-08-30T01:58:42+07:00"}
+{"container":"traefik-traefik-1f12f086f6d9c9bdb207e918f2b8e037ce05733906ffc6a6c68304d0f6494d1f","level":"debug","msg":"Filtering disabled container","providerName":"docker","time":"2020-08-30T01:58:42+07:00"}
+{"container":"pinguin-pinguin-e4c2f3738431cdfa50852d58aa19681be02ea343b2deb0a9993a618870df5d26","level":"warning","msg":"Could not find network named 'proxy' for container '/web-pinguin'! Maybe you're missing the project's prefix in the label? Defaulting to first available network.","providerName":"docker","serviceName":"web-pinguin","time":"2020-08-30T01:58:42+07:00"}
+{"level":"debug","msg":"Configuration received from provider docker: {\"http\":{\"routers\":{\"web-pinguin\":{\"service\":\"web-pinguin\",\"rule\":\"Host(`pinguin.localhost`)\"}},\"services\":{\"web-pinguin\":{\"loadBalancer\":{\"servers\":[{\"url\":\"http://172.19.0.3:80\"}],\"passHostHeader\":true}}}},\"tcp\":{},\"udp\":{}}","providerName":"docker","time":"2020-08-30T01:58:42+07:00"}
+{"level":"debug","msg":"No entryPoint defined for this router, using the default one(s) instead: [http https]","routerName":"web-pinguin","time":"2020-08-30T01:58:43+07:00"}
+{"entryPointName":"http","level":"debug","middlewareName":"pipelining","middlewareType":"Pipelining","msg":"Creating middleware","routerName":"web-pinguin@docker","serviceName":"web-pinguin","time":"2020-08-30T01:58:43+07:00"}
+{"entryPointName":"http","level":"debug","msg":"Creating load-balancer","routerName":"web-pinguin@docker","serviceName":"web-pinguin","time":"2020-08-30T01:58:43+07:00"}
+{"entryPointName":"http","level":"debug","msg":"Creating server 0 http://172.19.0.3:80","routerName":"web-pinguin@docker","serverName":0,"serviceName":"web-pinguin","time":"2020-08-30T01:58:43+07:00"}
+{"entryPointName":"http","level":"debug","middlewareName":"tracing","middlewareType":"TracingForwarder","msg":"Added outgoing tracing middleware web-pinguin","routerName":"web-pinguin@docker","time":"2020-08-30T01:58:43+07:00"}
+{"entryPointName":"http","level":"debug","middlewareName":"traefik-internal-recovery","middlewareType":"Recovery","msg":"Creating middleware","time":"2020-08-30T01:58:43+07:00"}
+{"entryPointName":"https","level":"debug","middlewareName":"traefik-internal-recovery","middlewareType":"Recovery","msg":"Creating middleware","time":"2020-08-30T01:58:43+07:00"}
+{"level":"debug","msg":"No default certificate, generating one","time":"2020-08-30T01:58:43+07:00"}
+{"level":"info","msg":"I have to go...","time":"2020-08-30T22:53:24+07:00"}
+{"level":"info","msg":"Stopping server gracefully","time":"2020-08-30T22:53:24+07:00"}
+{"entryPointName":"https","level":"debug","msg":"Waiting 10s seconds before killing connections.","time":"2020-08-30T22:53:24+07:00"}
+{"entryPointName":"http","level":"debug","msg":"Waiting 10s seconds before killing connections.","time":"2020-08-30T22:53:24+07:00"}
+{"entryPointName":"https","level":"error","msg":"accept tcp [::]:443: use of closed network connection","time":"2020-08-30T22:53:24+07:00"}
+{"entryPointName":"http","level":"error","msg":"accept tcp [::]:80: use of closed network connection","time":"2020-08-30T22:53:24+07:00"}
+{"entryPointName":"http","level":"error","msg":"close tcp [::]:80: use of closed network connection","time":"2020-08-30T22:53:24+07:00"}
+{"entryPointName":"http","level":"debug","msg":"Entry point http closed","time":"2020-08-30T22:53:24+07:00"}
+{"entryPointName":"https","level":"error","msg":"close tcp [::]:443: use of closed network connection","time":"2020-08-30T22:53:24+07:00"}
+{"entryPointName":"https","level":"debug","msg":"Entry point https closed","time":"2020-08-30T22:53:24+07:00"}
+{"level":"info","msg":"Server stopped","time":"2020-08-30T22:53:24+07:00"}
+{"level":"info","msg":"Shutting down","time":"2020-08-30T22:53:24+07:00"}
+{"level":"error","msg":"Cannot connect to docker server context canceled","providerName":"docker","time":"2020-08-30T22:53:24+07:00"}
+{"level":"info","msg":"Traefik version 2.2.8 built on 2020-07-28T15:46:03Z","time":"2020-08-31T09:52:53+07:00"}
+{"level":"debug","msg":"Static configuration loaded {\"global\":{\"checkNewVersion\":true},\"serversTransport\":{\"maxIdleConnsPerHost\":200},\"entryPoints\":{\"http\":{\"address\":\":80\",\"transport\":{\"lifeCycle\":{\"graceTimeOut\":10000000000},\"respondingTimeouts\":{\"idleTimeout\":180000000000}},\"forwardedHeaders\":{},\"http\":{}},\"https\":{\"address\":\":443\",\"transport\":{\"lifeCycle\":{\"graceTimeOut\":10000000000},\"respondingTimeouts\":{\"idleTimeout\":180000000000}},\"forwardedHeaders\":{},\"http\":{}}},\"providers\":{\"providersThrottleDuration\":2000000000,\"docker\":{\"watch\":true,\"endpoint\":\"unix:///var/run/docker.sock\",\"defaultRule\":\"Host(`{{ normalize .Name }}`)\",\"swarmModeRefreshSeconds\":15000000000}},\"log\":{\"level\":\"DEBUG\",\"filePath\":\"/var/log/traefik/traefik.log\",\"format\":\"json\"},\"accessLog\":{\"filePath\":\"/var/log/traefik/access.log\",\"format\":\"json\",\"filters\":{},\"fields\":{\"defaultMode\":\"keep\",\"headers\":{\"defaultMode\":\"drop\"}}}}","time":"2020-08-31T09:52:53+07:00"}
+{"level":"info","msg":"\nStats collection is disabled.\nHelp us improve Traefik by turning this feature on :)\nMore details on: https://docs.traefik.io/contributing/data-collection/\n","time":"2020-08-31T09:52:53+07:00"}
+{"level":"info","msg":"Starting provider aggregator.ProviderAggregator {}","time":"2020-08-31T09:52:53+07:00"}
+{"entryPointName":"https","level":"debug","msg":"Start TCP Server","time":"2020-08-31T09:52:53+07:00"}
+{"entryPointName":"http","level":"debug","msg":"Start TCP Server","time":"2020-08-31T09:52:53+07:00"}
+{"level":"info","msg":"Starting provider *traefik.Provider {}","time":"2020-08-31T09:52:53+07:00"}
+{"level":"info","msg":"Starting provider *docker.Provider {\"watch\":true,\"endpoint\":\"unix:///var/run/docker.sock\",\"defaultRule\":\"Host(`{{ normalize .Name }}`)\",\"swarmModeRefreshSeconds\":15000000000}","time":"2020-08-31T09:52:53+07:00"}
+{"level":"debug","msg":"Configuration received from provider internal: {\"http\":{\"services\":{\"noop\":{}}},\"tcp\":{},\"tls\":{}}","providerName":"internal","time":"2020-08-31T09:52:53+07:00"}
+{"level":"debug","msg":"No default certificate, generating one","time":"2020-08-31T09:52:53+07:00"}
+{"level":"debug","msg":"Provider connection established with docker 19.03.12 (API 1.40)","providerName":"docker","time":"2020-08-31T09:52:53+07:00"}
+{"container":"traefik-traefik-1f12f086f6d9c9bdb207e918f2b8e037ce05733906ffc6a6c68304d0f6494d1f","level":"debug","msg":"Filtering disabled container","providerName":"docker","time":"2020-08-31T09:52:53+07:00"}
+{"container":"pinguin-pinguin-e4c2f3738431cdfa50852d58aa19681be02ea343b2deb0a9993a618870df5d26","level":"warning","msg":"Could not find network named 'proxy' for container '/web-pinguin'! Maybe you're missing the project's prefix in the label? Defaulting to first available network.","providerName":"docker","serviceName":"web-pinguin","time":"2020-08-31T09:52:53+07:00"}
+{"level":"debug","msg":"Configuration received from provider docker: {\"http\":{\"routers\":{\"web-pinguin\":{\"service\":\"web-pinguin\",\"rule\":\"Host(`pinguin.localhost`)\"}},\"services\":{\"web-pinguin\":{\"loadBalancer\":{\"servers\":[{\"url\":\"http://172.19.0.2:80\"}],\"passHostHeader\":true}}}},\"tcp\":{},\"udp\":{}}","providerName":"docker","time":"2020-08-31T09:52:53+07:00"}
+{"level":"debug","msg":"No entryPoint defined for this router, using the default one(s) instead: [http https]","routerName":"web-pinguin","time":"2020-08-31T09:52:53+07:00"}
+{"entryPointName":"http","level":"debug","middlewareName":"pipelining","middlewareType":"Pipelining","msg":"Creating middleware","routerName":"web-pinguin@docker","serviceName":"web-pinguin","time":"2020-08-31T09:52:53+07:00"}
+{"entryPointName":"http","level":"debug","msg":"Creating load-balancer","routerName":"web-pinguin@docker","serviceName":"web-pinguin","time":"2020-08-31T09:52:53+07:00"}
+{"entryPointName":"http","level":"debug","msg":"Creating server 0 http://172.19.0.2:80","routerName":"web-pinguin@docker","serverName":0,"serviceName":"web-pinguin","time":"2020-08-31T09:52:53+07:00"}
+{"entryPointName":"http","level":"debug","middlewareName":"tracing","middlewareType":"TracingForwarder","msg":"Added outgoing tracing middleware web-pinguin","routerName":"web-pinguin@docker","time":"2020-08-31T09:52:53+07:00"}
+{"entryPointName":"http","level":"debug","middlewareName":"traefik-internal-recovery","middlewareType":"Recovery","msg":"Creating middleware","time":"2020-08-31T09:52:53+07:00"}
+{"entryPointName":"https","level":"debug","middlewareName":"traefik-internal-recovery","middlewareType":"Recovery","msg":"Creating middleware","time":"2020-08-31T09:52:53+07:00"}
+{"level":"debug","msg":"No default certificate, generating one","time":"2020-08-31T09:52:53+07:00"}
+{"level":"info","msg":"I have to go...","time":"2020-08-31T17:04:45+07:00"}
+{"level":"info","msg":"Stopping server gracefully","time":"2020-08-31T17:04:45+07:00"}
+{"entryPointName":"https","level":"debug","msg":"Waiting 10s seconds before killing connections.","time":"2020-08-31T17:04:45+07:00"}
+{"entryPointName":"http","level":"debug","msg":"Waiting 10s seconds before killing connections.","time":"2020-08-31T17:04:45+07:00"}
+{"entryPointName":"https","level":"error","msg":"accept tcp [::]:443: use of closed network connection","time":"2020-08-31T17:04:45+07:00"}
+{"entryPointName":"https","level":"error","msg":"close tcp [::]:443: use of closed network connection","time":"2020-08-31T17:04:45+07:00"}
+{"entryPointName":"http","level":"error","msg":"accept tcp [::]:80: use of closed network connection","time":"2020-08-31T17:04:45+07:00"}
+{"entryPointName":"https","level":"debug","msg":"Entry point https closed","time":"2020-08-31T17:04:45+07:00"}
+{"entryPointName":"http","level":"error","msg":"close tcp [::]:80: use of closed network connection","time":"2020-08-31T17:04:45+07:00"}
+{"entryPointName":"http","level":"debug","msg":"Entry point http closed","time":"2020-08-31T17:04:45+07:00"}
+{"level":"info","msg":"Server stopped","time":"2020-08-31T17:04:45+07:00"}
+{"level":"info","msg":"Shutting down","time":"2020-08-31T17:04:45+07:00"}
+{"level":"info","msg":"Traefik version 2.2.8 built on 2020-07-28T15:46:03Z","time":"2020-08-31T20:17:26+07:00"}
+{"level":"debug","msg":"Static configuration loaded {\"global\":{\"checkNewVersion\":true},\"serversTransport\":{\"maxIdleConnsPerHost\":200},\"entryPoints\":{\"http\":{\"address\":\":80\",\"transport\":{\"lifeCycle\":{\"graceTimeOut\":10000000000},\"respondingTimeouts\":{\"idleTimeout\":180000000000}},\"forwardedHeaders\":{},\"http\":{}},\"https\":{\"address\":\":443\",\"transport\":{\"lifeCycle\":{\"graceTimeOut\":10000000000},\"respondingTimeouts\":{\"idleTimeout\":180000000000}},\"forwardedHeaders\":{},\"http\":{}}},\"providers\":{\"providersThrottleDuration\":2000000000,\"docker\":{\"watch\":true,\"endpoint\":\"unix:///var/run/docker.sock\",\"defaultRule\":\"Host(`{{ normalize .Name }}`)\",\"swarmModeRefreshSeconds\":15000000000}},\"log\":{\"level\":\"DEBUG\",\"filePath\":\"/var/log/traefik/traefik.log\",\"format\":\"json\"},\"accessLog\":{\"filePath\":\"/var/log/traefik/access.log\",\"format\":\"json\",\"filters\":{},\"fields\":{\"defaultMode\":\"keep\",\"headers\":{\"defaultMode\":\"drop\"}}}}","time":"2020-08-31T20:17:26+07:00"}
+{"level":"info","msg":"\nStats collection is disabled.\nHelp us improve Traefik by turning this feature on :)\nMore details on: https://docs.traefik.io/contributing/data-collection/\n","time":"2020-08-31T20:17:26+07:00"}
+{"level":"info","msg":"Starting provider aggregator.ProviderAggregator {}","time":"2020-08-31T20:17:26+07:00"}
+{"entryPointName":"https","level":"debug","msg":"Start TCP Server","time":"2020-08-31T20:17:26+07:00"}
+{"entryPointName":"http","level":"debug","msg":"Start TCP Server","time":"2020-08-31T20:17:26+07:00"}
+{"level":"info","msg":"Starting provider *traefik.Provider {}","time":"2020-08-31T20:17:26+07:00"}
+{"level":"info","msg":"Starting provider *docker.Provider {\"watch\":true,\"endpoint\":\"unix:///var/run/docker.sock\",\"defaultRule\":\"Host(`{{ normalize .Name }}`)\",\"swarmModeRefreshSeconds\":15000000000}","time":"2020-08-31T20:17:26+07:00"}
+{"level":"debug","msg":"Configuration received from provider internal: {\"http\":{\"services\":{\"noop\":{}}},\"tcp\":{},\"tls\":{}}","providerName":"internal","time":"2020-08-31T20:17:26+07:00"}
+{"level":"debug","msg":"No default certificate, generating one","time":"2020-08-31T20:17:26+07:00"}
+{"level":"debug","msg":"Provider connection established with docker 19.03.12 (API 1.40)","providerName":"docker","time":"2020-08-31T20:17:26+07:00"}
+{"container":"traefik-traefik-1f12f086f6d9c9bdb207e918f2b8e037ce05733906ffc6a6c68304d0f6494d1f","level":"debug","msg":"Filtering disabled container","providerName":"docker","time":"2020-08-31T20:17:26+07:00"}
+{"container":"pinguin-pinguin-e4c2f3738431cdfa50852d58aa19681be02ea343b2deb0a9993a618870df5d26","level":"warning","msg":"Could not find network named 'proxy' for container '/web-pinguin'! Maybe you're missing the project's prefix in the label? Defaulting to first available network.","providerName":"docker","serviceName":"web-pinguin","time":"2020-08-31T20:17:26+07:00"}
+{"level":"debug","msg":"Configuration received from provider docker: {\"http\":{\"routers\":{\"web-pinguin\":{\"service\":\"web-pinguin\",\"rule\":\"Host(`pinguin.localhost`)\"}},\"services\":{\"web-pinguin\":{\"loadBalancer\":{\"servers\":[{\"url\":\"http://172.19.0.3:80\"}],\"passHostHeader\":true}}}},\"tcp\":{},\"udp\":{}}","providerName":"docker","time":"2020-08-31T20:17:26+07:00"}
+{"level":"debug","msg":"No entryPoint defined for this router, using the default one(s) instead: [http https]","routerName":"web-pinguin","time":"2020-08-31T20:17:26+07:00"}
+{"entryPointName":"http","level":"debug","middlewareName":"pipelining","middlewareType":"Pipelining","msg":"Creating middleware","routerName":"web-pinguin@docker","serviceName":"web-pinguin","time":"2020-08-31T20:17:26+07:00"}
+{"entryPointName":"http","level":"debug","msg":"Creating load-balancer","routerName":"web-pinguin@docker","serviceName":"web-pinguin","time":"2020-08-31T20:17:26+07:00"}
+{"entryPointName":"http","level":"debug","msg":"Creating server 0 http://172.19.0.3:80","routerName":"web-pinguin@docker","serverName":0,"serviceName":"web-pinguin","time":"2020-08-31T20:17:26+07:00"}
+{"entryPointName":"http","level":"debug","middlewareName":"tracing","middlewareType":"TracingForwarder","msg":"Added outgoing tracing middleware web-pinguin","routerName":"web-pinguin@docker","time":"2020-08-31T20:17:26+07:00"}
+{"entryPointName":"http","level":"debug","middlewareName":"traefik-internal-recovery","middlewareType":"Recovery","msg":"Creating middleware","time":"2020-08-31T20:17:26+07:00"}
+{"entryPointName":"https","level":"debug","middlewareName":"traefik-internal-recovery","middlewareType":"Recovery","msg":"Creating middleware","time":"2020-08-31T20:17:26+07:00"}
+{"level":"debug","msg":"No default certificate, generating one","time":"2020-08-31T20:17:26+07:00"}
+{"level":"info","msg":"I have to go...","time":"2020-09-01T00:23:33+07:00"}
+{"level":"info","msg":"Stopping server gracefully","time":"2020-09-01T00:23:33+07:00"}
+{"entryPointName":"http","level":"debug","msg":"Waiting 10s seconds before killing connections.","time":"2020-09-01T00:23:33+07:00"}
+{"entryPointName":"http","level":"error","msg":"accept tcp [::]:80: use of closed network connection","time":"2020-09-01T00:23:33+07:00"}
+{"entryPointName":"http","level":"error","msg":"close tcp [::]:80: use of closed network connection","time":"2020-09-01T00:23:33+07:00"}
+{"entryPointName":"http","level":"debug","msg":"Entry point http closed","time":"2020-09-01T00:23:33+07:00"}
+{"entryPointName":"https","level":"debug","msg":"Waiting 10s seconds before killing connections.","time":"2020-09-01T00:23:33+07:00"}
+{"entryPointName":"https","level":"error","msg":"accept tcp [::]:443: use of closed network connection","time":"2020-09-01T00:23:33+07:00"}
+{"entryPointName":"https","level":"error","msg":"close tcp [::]:443: use of closed network connection","time":"2020-09-01T00:23:33+07:00"}
+{"entryPointName":"https","level":"debug","msg":"Entry point https closed","time":"2020-09-01T00:23:33+07:00"}
+{"level":"info","msg":"Server stopped","time":"2020-09-01T00:23:33+07:00"}
+{"level":"info","msg":"Shutting down","time":"2020-09-01T00:23:33+07:00"}
+{"level":"error","msg":"Cannot connect to docker server context canceled","providerName":"docker","time":"2020-09-01T00:23:33+07:00"}
+{"level":"info","msg":"Traefik version 2.2.8 built on 2020-07-28T15:46:03Z","time":"2020-09-01T09:39:14+07:00"}
+{"level":"debug","msg":"Static configuration loaded {\"global\":{\"checkNewVersion\":true},\"serversTransport\":{\"maxIdleConnsPerHost\":200},\"entryPoints\":{\"http\":{\"address\":\":80\",\"transport\":{\"lifeCycle\":{\"graceTimeOut\":10000000000},\"respondingTimeouts\":{\"idleTimeout\":180000000000}},\"forwardedHeaders\":{},\"http\":{}},\"https\":{\"address\":\":443\",\"transport\":{\"lifeCycle\":{\"graceTimeOut\":10000000000},\"respondingTimeouts\":{\"idleTimeout\":180000000000}},\"forwardedHeaders\":{},\"http\":{}}},\"providers\":{\"providersThrottleDuration\":2000000000,\"docker\":{\"watch\":true,\"endpoint\":\"unix:///var/run/docker.sock\",\"defaultRule\":\"Host(`{{ normalize .Name }}`)\",\"swarmModeRefreshSeconds\":15000000000}},\"log\":{\"level\":\"DEBUG\",\"filePath\":\"/var/log/traefik/traefik.log\",\"format\":\"json\"},\"accessLog\":{\"filePath\":\"/var/log/traefik/access.log\",\"format\":\"json\",\"filters\":{},\"fields\":{\"defaultMode\":\"keep\",\"headers\":{\"defaultMode\":\"drop\"}}}}","time":"2020-09-01T09:39:14+07:00"}
+{"level":"info","msg":"\nStats collection is disabled.\nHelp us improve Traefik by turning this feature on :)\nMore details on: https://docs.traefik.io/contributing/data-collection/\n","time":"2020-09-01T09:39:14+07:00"}
+{"level":"info","msg":"Starting provider aggregator.ProviderAggregator {}","time":"2020-09-01T09:39:14+07:00"}
+{"entryPointName":"http","level":"debug","msg":"Start TCP Server","time":"2020-09-01T09:39:14+07:00"}
+{"level":"info","msg":"Starting provider *docker.Provider {\"watch\":true,\"endpoint\":\"unix:///var/run/docker.sock\",\"defaultRule\":\"Host(`{{ normalize .Name }}`)\",\"swarmModeRefreshSeconds\":15000000000}","time":"2020-09-01T09:39:14+07:00"}
+{"level":"info","msg":"Starting provider *traefik.Provider {}","time":"2020-09-01T09:39:14+07:00"}
+{"entryPointName":"https","level":"debug","msg":"Start TCP Server","time":"2020-09-01T09:39:14+07:00"}
+{"level":"debug","msg":"Configuration received from provider internal: {\"http\":{\"services\":{\"noop\":{}}},\"tcp\":{},\"tls\":{}}","providerName":"internal","time":"2020-09-01T09:39:14+07:00"}
+{"level":"debug","msg":"Provider connection established with docker 19.03.12 (API 1.40)","providerName":"docker","time":"2020-09-01T09:39:14+07:00"}
+{"container":"traefik-traefik-1f12f086f6d9c9bdb207e918f2b8e037ce05733906ffc6a6c68304d0f6494d1f","level":"debug","msg":"Filtering disabled container","providerName":"docker","time":"2020-09-01T09:39:14+07:00"}
+{"container":"pinguin-pinguin-e4c2f3738431cdfa50852d58aa19681be02ea343b2deb0a9993a618870df5d26","level":"warning","msg":"Could not find network named 'proxy' for container '/web-pinguin'! Maybe you're missing the project's prefix in the label? Defaulting to first available network.","providerName":"docker","serviceName":"web-pinguin","time":"2020-09-01T09:39:14+07:00"}
+{"level":"debug","msg":"Configuration received from provider docker: {\"http\":{\"routers\":{\"web-pinguin\":{\"service\":\"web-pinguin\",\"rule\":\"Host(`pinguin.localhost`)\"}},\"services\":{\"web-pinguin\":{\"loadBalancer\":{\"servers\":[{\"url\":\"http://172.19.0.3:80\"}],\"passHostHeader\":true}}}},\"tcp\":{},\"udp\":{}}","providerName":"docker","time":"2020-09-01T09:39:14+07:00"}
+{"level":"debug","msg":"No default certificate, generating one","time":"2020-09-01T09:39:14+07:00"}
+{"level":"debug","msg":"No entryPoint defined for this router, using the default one(s) instead: [http https]","routerName":"web-pinguin","time":"2020-09-01T09:39:14+07:00"}
+{"entryPointName":"http","level":"debug","middlewareName":"pipelining","middlewareType":"Pipelining","msg":"Creating middleware","routerName":"web-pinguin@docker","serviceName":"web-pinguin","time":"2020-09-01T09:39:14+07:00"}
+{"entryPointName":"http","level":"debug","msg":"Creating load-balancer","routerName":"web-pinguin@docker","serviceName":"web-pinguin","time":"2020-09-01T09:39:14+07:00"}
+{"entryPointName":"http","level":"debug","msg":"Creating server 0 http://172.19.0.3:80","routerName":"web-pinguin@docker","serverName":0,"serviceName":"web-pinguin","time":"2020-09-01T09:39:14+07:00"}
+{"entryPointName":"http","level":"debug","middlewareName":"tracing","middlewareType":"TracingForwarder","msg":"Added outgoing tracing middleware web-pinguin","routerName":"web-pinguin@docker","time":"2020-09-01T09:39:14+07:00"}
+{"entryPointName":"http","level":"debug","middlewareName":"traefik-internal-recovery","middlewareType":"Recovery","msg":"Creating middleware","time":"2020-09-01T09:39:14+07:00"}
+{"entryPointName":"https","level":"debug","middlewareName":"traefik-internal-recovery","middlewareType":"Recovery","msg":"Creating middleware","time":"2020-09-01T09:39:14+07:00"}
+{"level":"debug","msg":"No default certificate, generating one","time":"2020-09-01T09:39:14+07:00"}
+{"level":"info","msg":"I have to go...","time":"2020-09-01T15:55:20+07:00"}
+{"level":"info","msg":"Stopping server gracefully","time":"2020-09-01T15:55:20+07:00"}
+{"entryPointName":"https","level":"debug","msg":"Waiting 10s seconds before killing connections.","time":"2020-09-01T15:55:20+07:00"}
+{"entryPointName":"http","level":"debug","msg":"Waiting 10s seconds before killing connections.","time":"2020-09-01T15:55:20+07:00"}
+{"entryPointName":"https","level":"error","msg":"accept tcp [::]:443: use of closed network connection","time":"2020-09-01T15:55:20+07:00"}
+{"entryPointName":"http","level":"error","msg":"accept tcp [::]:80: use of closed network connection","time":"2020-09-01T15:55:20+07:00"}
+{"entryPointName":"https","level":"error","msg":"close tcp [::]:443: use of closed network connection","time":"2020-09-01T15:55:20+07:00"}
+{"entryPointName":"https","level":"debug","msg":"Entry point https closed","time":"2020-09-01T15:55:20+07:00"}
+{"entryPointName":"http","level":"error","msg":"close tcp [::]:80: use of closed network connection","time":"2020-09-01T15:55:20+07:00"}
+{"entryPointName":"http","level":"debug","msg":"Entry point http closed","time":"2020-09-01T15:55:20+07:00"}
+{"level":"info","msg":"Server stopped","time":"2020-09-01T15:55:20+07:00"}
+{"level":"info","msg":"Shutting down","time":"2020-09-01T15:55:20+07:00"}
+{"level":"info","msg":"Traefik version 2.2.8 built on 2020-07-28T15:46:03Z","time":"2020-09-01T22:27:01+07:00"}
+{"level":"debug","msg":"Static configuration loaded {\"global\":{\"checkNewVersion\":true},\"serversTransport\":{\"maxIdleConnsPerHost\":200},\"entryPoints\":{\"http\":{\"address\":\":80\",\"transport\":{\"lifeCycle\":{\"graceTimeOut\":10000000000},\"respondingTimeouts\":{\"idleTimeout\":180000000000}},\"forwardedHeaders\":{},\"http\":{}},\"https\":{\"address\":\":443\",\"transport\":{\"lifeCycle\":{\"graceTimeOut\":10000000000},\"respondingTimeouts\":{\"idleTimeout\":180000000000}},\"forwardedHeaders\":{},\"http\":{}}},\"providers\":{\"providersThrottleDuration\":2000000000,\"docker\":{\"watch\":true,\"endpoint\":\"unix:///var/run/docker.sock\",\"defaultRule\":\"Host(`{{ normalize .Name }}`)\",\"swarmModeRefreshSeconds\":15000000000}},\"log\":{\"level\":\"DEBUG\",\"filePath\":\"/var/log/traefik/traefik.log\",\"format\":\"json\"},\"accessLog\":{\"filePath\":\"/var/log/traefik/access.log\",\"format\":\"json\",\"filters\":{},\"fields\":{\"defaultMode\":\"keep\",\"headers\":{\"defaultMode\":\"drop\"}}}}","time":"2020-09-01T22:27:01+07:00"}
+{"level":"info","msg":"\nStats collection is disabled.\nHelp us improve Traefik by turning this feature on :)\nMore details on: https://docs.traefik.io/contributing/data-collection/\n","time":"2020-09-01T22:27:01+07:00"}
+{"level":"info","msg":"Starting provider aggregator.ProviderAggregator {}","time":"2020-09-01T22:27:01+07:00"}
+{"entryPointName":"http","level":"debug","msg":"Start TCP Server","time":"2020-09-01T22:27:01+07:00"}
+{"entryPointName":"https","level":"debug","msg":"Start TCP Server","time":"2020-09-01T22:27:01+07:00"}
+{"level":"info","msg":"Starting provider *traefik.Provider {}","time":"2020-09-01T22:27:01+07:00"}
+{"level":"info","msg":"Starting provider *docker.Provider {\"watch\":true,\"endpoint\":\"unix:///var/run/docker.sock\",\"defaultRule\":\"Host(`{{ normalize .Name }}`)\",\"swarmModeRefreshSeconds\":15000000000}","time":"2020-09-01T22:27:01+07:00"}
+{"level":"debug","msg":"Configuration received from provider internal: {\"http\":{\"services\":{\"noop\":{}}},\"tcp\":{},\"tls\":{}}","providerName":"internal","time":"2020-09-01T22:27:01+07:00"}
+{"level":"debug","msg":"No default certificate, generating one","time":"2020-09-01T22:27:01+07:00"}
+{"level":"debug","msg":"Provider connection established with docker 19.03.12 (API 1.40)","providerName":"docker","time":"2020-09-01T22:27:01+07:00"}
+{"container":"traefik-traefik-1f12f086f6d9c9bdb207e918f2b8e037ce05733906ffc6a6c68304d0f6494d1f","level":"debug","msg":"Filtering disabled container","providerName":"docker","time":"2020-09-01T22:27:01+07:00"}
+{"container":"pinguin-pinguin-e4c2f3738431cdfa50852d58aa19681be02ea343b2deb0a9993a618870df5d26","level":"warning","msg":"Could not find network named 'proxy' for container '/web-pinguin'! Maybe you're missing the project's prefix in the label? Defaulting to first available network.","providerName":"docker","serviceName":"web-pinguin","time":"2020-09-01T22:27:01+07:00"}
+{"level":"debug","msg":"Configuration received from provider docker: {\"http\":{\"routers\":{\"web-pinguin\":{\"service\":\"web-pinguin\",\"rule\":\"Host(`pinguin.localhost`)\"}},\"services\":{\"web-pinguin\":{\"loadBalancer\":{\"servers\":[{\"url\":\"http://172.19.0.2:80\"}],\"passHostHeader\":true}}}},\"tcp\":{},\"udp\":{}}","providerName":"docker","time":"2020-09-01T22:27:01+07:00"}
+{"level":"debug","msg":"No entryPoint defined for this router, using the default one(s) instead: [http https]","routerName":"web-pinguin","time":"2020-09-01T22:27:01+07:00"}
+{"entryPointName":"http","level":"debug","middlewareName":"pipelining","middlewareType":"Pipelining","msg":"Creating middleware","routerName":"web-pinguin@docker","serviceName":"web-pinguin","time":"2020-09-01T22:27:01+07:00"}
+{"entryPointName":"http","level":"debug","msg":"Creating load-balancer","routerName":"web-pinguin@docker","serviceName":"web-pinguin","time":"2020-09-01T22:27:01+07:00"}
+{"entryPointName":"http","level":"debug","msg":"Creating server 0 http://172.19.0.2:80","routerName":"web-pinguin@docker","serverName":0,"serviceName":"web-pinguin","time":"2020-09-01T22:27:01+07:00"}
+{"entryPointName":"http","level":"debug","middlewareName":"tracing","middlewareType":"TracingForwarder","msg":"Added outgoing tracing middleware web-pinguin","routerName":"web-pinguin@docker","time":"2020-09-01T22:27:01+07:00"}
+{"entryPointName":"http","level":"debug","middlewareName":"traefik-internal-recovery","middlewareType":"Recovery","msg":"Creating middleware","time":"2020-09-01T22:27:01+07:00"}
+{"entryPointName":"https","level":"debug","middlewareName":"traefik-internal-recovery","middlewareType":"Recovery","msg":"Creating middleware","time":"2020-09-01T22:27:01+07:00"}
+{"level":"debug","msg":"No default certificate, generating one","time":"2020-09-01T22:27:01+07:00"}
+{"level":"info","msg":"I have to go...","time":"2020-09-02T01:36:11+07:00"}
+{"level":"info","msg":"Stopping server gracefully","time":"2020-09-02T01:36:11+07:00"}
+{"entryPointName":"https","level":"debug","msg":"Waiting 10s seconds before killing connections.","time":"2020-09-02T01:36:11+07:00"}
+{"entryPointName":"http","level":"debug","msg":"Waiting 10s seconds before killing connections.","time":"2020-09-02T01:36:11+07:00"}
+{"entryPointName":"https","level":"error","msg":"accept tcp [::]:443: use of closed network connection","time":"2020-09-02T01:36:11+07:00"}
+{"entryPointName":"https","level":"error","msg":"close tcp [::]:443: use of closed network connection","time":"2020-09-02T01:36:11+07:00"}
+{"entryPointName":"https","level":"debug","msg":"Entry point https closed","time":"2020-09-02T01:36:11+07:00"}
+{"entryPointName":"http","level":"error","msg":"accept tcp [::]:80: use of closed network connection","time":"2020-09-02T01:36:11+07:00"}
+{"entryPointName":"http","level":"error","msg":"close tcp [::]:80: use of closed network connection","time":"2020-09-02T01:36:11+07:00"}
+{"entryPointName":"http","level":"debug","msg":"Entry point http closed","time":"2020-09-02T01:36:11+07:00"}
+{"level":"info","msg":"Server stopped","time":"2020-09-02T01:36:11+07:00"}
+{"level":"info","msg":"Shutting down","time":"2020-09-02T01:36:11+07:00"}
+{"level":"info","msg":"Traefik version 2.2.8 built on 2020-07-28T15:46:03Z","time":"2020-09-02T09:44:16+07:00"}
+{"level":"debug","msg":"Static configuration loaded {\"global\":{\"checkNewVersion\":true},\"serversTransport\":{\"maxIdleConnsPerHost\":200},\"entryPoints\":{\"http\":{\"address\":\":80\",\"transport\":{\"lifeCycle\":{\"graceTimeOut\":10000000000},\"respondingTimeouts\":{\"idleTimeout\":180000000000}},\"forwardedHeaders\":{},\"http\":{}},\"https\":{\"address\":\":443\",\"transport\":{\"lifeCycle\":{\"graceTimeOut\":10000000000},\"respondingTimeouts\":{\"idleTimeout\":180000000000}},\"forwardedHeaders\":{},\"http\":{}}},\"providers\":{\"providersThrottleDuration\":2000000000,\"docker\":{\"watch\":true,\"endpoint\":\"unix:///var/run/docker.sock\",\"defaultRule\":\"Host(`{{ normalize .Name }}`)\",\"swarmModeRefreshSeconds\":15000000000}},\"log\":{\"level\":\"DEBUG\",\"filePath\":\"/var/log/traefik/traefik.log\",\"format\":\"json\"},\"accessLog\":{\"filePath\":\"/var/log/traefik/access.log\",\"format\":\"json\",\"filters\":{},\"fields\":{\"defaultMode\":\"keep\",\"headers\":{\"defaultMode\":\"drop\"}}}}","time":"2020-09-02T09:44:16+07:00"}
+{"level":"info","msg":"\nStats collection is disabled.\nHelp us improve Traefik by turning this feature on :)\nMore details on: https://docs.traefik.io/contributing/data-collection/\n","time":"2020-09-02T09:44:16+07:00"}
+{"entryPointName":"http","level":"debug","msg":"Start TCP Server","time":"2020-09-02T09:44:16+07:00"}
+{"level":"info","msg":"Starting provider aggregator.ProviderAggregator {}","time":"2020-09-02T09:44:16+07:00"}
+{"level":"info","msg":"Starting provider *docker.Provider {\"watch\":true,\"endpoint\":\"unix:///var/run/docker.sock\",\"defaultRule\":\"Host(`{{ normalize .Name }}`)\",\"swarmModeRefreshSeconds\":15000000000}","time":"2020-09-02T09:44:16+07:00"}
+{"level":"info","msg":"Starting provider *traefik.Provider {}","time":"2020-09-02T09:44:16+07:00"}
+{"entryPointName":"https","level":"debug","msg":"Start TCP Server","time":"2020-09-02T09:44:16+07:00"}
+{"level":"debug","msg":"Configuration received from provider internal: {\"http\":{\"services\":{\"noop\":{}}},\"tcp\":{},\"tls\":{}}","providerName":"internal","time":"2020-09-02T09:44:16+07:00"}
+{"level":"debug","msg":"No default certificate, generating one","time":"2020-09-02T09:44:16+07:00"}
+{"level":"debug","msg":"Provider connection established with docker 19.03.12 (API 1.40)","providerName":"docker","time":"2020-09-02T09:44:16+07:00"}
+{"container":"traefik-traefik-1f12f086f6d9c9bdb207e918f2b8e037ce05733906ffc6a6c68304d0f6494d1f","level":"debug","msg":"Filtering disabled container","providerName":"docker","time":"2020-09-02T09:44:16+07:00"}
+{"container":"pinguin-pinguin-e4c2f3738431cdfa50852d58aa19681be02ea343b2deb0a9993a618870df5d26","level":"warning","msg":"Could not find network named 'proxy' for container '/web-pinguin'! Maybe you're missing the project's prefix in the label? Defaulting to first available network.","providerName":"docker","serviceName":"web-pinguin","time":"2020-09-02T09:44:16+07:00"}
+{"level":"debug","msg":"Configuration received from provider docker: {\"http\":{\"routers\":{\"web-pinguin\":{\"service\":\"web-pinguin\",\"rule\":\"Host(`pinguin.localhost`)\"}},\"services\":{\"web-pinguin\":{\"loadBalancer\":{\"servers\":[{\"url\":\"http://172.19.0.3:80\"}],\"passHostHeader\":true}}}},\"tcp\":{},\"udp\":{}}","providerName":"docker","time":"2020-09-02T09:44:16+07:00"}
+{"level":"debug","msg":"No entryPoint defined for this router, using the default one(s) instead: [http https]","routerName":"web-pinguin","time":"2020-09-02T09:44:16+07:00"}
+{"entryPointName":"http","level":"debug","middlewareName":"pipelining","middlewareType":"Pipelining","msg":"Creating middleware","routerName":"web-pinguin@docker","serviceName":"web-pinguin","time":"2020-09-02T09:44:16+07:00"}
+{"entryPointName":"http","level":"debug","msg":"Creating load-balancer","routerName":"web-pinguin@docker","serviceName":"web-pinguin","time":"2020-09-02T09:44:16+07:00"}
+{"entryPointName":"http","level":"debug","msg":"Creating server 0 http://172.19.0.3:80","routerName":"web-pinguin@docker","serverName":0,"serviceName":"web-pinguin","time":"2020-09-02T09:44:16+07:00"}
+{"entryPointName":"http","level":"debug","middlewareName":"tracing","middlewareType":"TracingForwarder","msg":"Added outgoing tracing middleware web-pinguin","routerName":"web-pinguin@docker","time":"2020-09-02T09:44:16+07:00"}
+{"entryPointName":"http","level":"debug","middlewareName":"traefik-internal-recovery","middlewareType":"Recovery","msg":"Creating middleware","time":"2020-09-02T09:44:16+07:00"}
+{"entryPointName":"https","level":"debug","middlewareName":"traefik-internal-recovery","middlewareType":"Recovery","msg":"Creating middleware","time":"2020-09-02T09:44:16+07:00"}
+{"level":"debug","msg":"No default certificate, generating one","time":"2020-09-02T09:44:16+07:00"}
+{"level":"info","msg":"Traefik version 2.2.8 built on 2020-07-28T15:46:03Z","time":"2020-09-02T12:33:38+07:00"}
+{"level":"debug","msg":"Static configuration loaded {\"global\":{\"checkNewVersion\":true},\"serversTransport\":{\"maxIdleConnsPerHost\":200},\"entryPoints\":{\"http\":{\"address\":\":80\",\"transport\":{\"lifeCycle\":{\"graceTimeOut\":10000000000},\"respondingTimeouts\":{\"idleTimeout\":180000000000}},\"forwardedHeaders\":{},\"http\":{}},\"https\":{\"address\":\":443\",\"transport\":{\"lifeCycle\":{\"graceTimeOut\":10000000000},\"respondingTimeouts\":{\"idleTimeout\":180000000000}},\"forwardedHeaders\":{},\"http\":{}}},\"providers\":{\"providersThrottleDuration\":2000000000,\"docker\":{\"watch\":true,\"endpoint\":\"unix:///var/run/docker.sock\",\"defaultRule\":\"Host(`{{ normalize .Name }}`)\",\"swarmModeRefreshSeconds\":15000000000}},\"log\":{\"level\":\"DEBUG\",\"filePath\":\"/var/log/traefik/traefik.log\",\"format\":\"json\"},\"accessLog\":{\"filePath\":\"/var/log/traefik/access.log\",\"format\":\"json\",\"filters\":{},\"fields\":{\"defaultMode\":\"keep\",\"headers\":{\"defaultMode\":\"drop\"}}}}","time":"2020-09-02T12:33:38+07:00"}
+{"level":"info","msg":"\nStats collection is disabled.\nHelp us improve Traefik by turning this feature on :)\nMore details on: https://docs.traefik.io/contributing/data-collection/\n","time":"2020-09-02T12:33:38+07:00"}
+{"level":"info","msg":"Starting provider aggregator.ProviderAggregator {}","time":"2020-09-02T12:33:38+07:00"}
+{"entryPointName":"http","level":"debug","msg":"Start TCP Server","time":"2020-09-02T12:33:38+07:00"}
+{"entryPointName":"https","level":"debug","msg":"Start TCP Server","time":"2020-09-02T12:33:38+07:00"}
+{"level":"info","msg":"Starting provider *docker.Provider {\"watch\":true,\"endpoint\":\"unix:///var/run/docker.sock\",\"defaultRule\":\"Host(`{{ normalize .Name }}`)\",\"swarmModeRefreshSeconds\":15000000000}","time":"2020-09-02T12:33:38+07:00"}
+{"level":"info","msg":"Starting provider *traefik.Provider {}","time":"2020-09-02T12:33:38+07:00"}
+{"level":"debug","msg":"Configuration received from provider internal: {\"http\":{\"services\":{\"noop\":{}}},\"tcp\":{},\"tls\":{}}","providerName":"internal","time":"2020-09-02T12:33:38+07:00"}
+{"level":"debug","msg":"Provider connection established with docker 19.03.12 (API 1.40)","providerName":"docker","time":"2020-09-02T12:33:38+07:00"}
+{"level":"debug","msg":"No default certificate, generating one","time":"2020-09-02T12:33:38+07:00"}
+{"container":"traefik-traefik-1f12f086f6d9c9bdb207e918f2b8e037ce05733906ffc6a6c68304d0f6494d1f","level":"debug","msg":"Filtering disabled container","providerName":"docker","time":"2020-09-02T12:33:38+07:00"}
+{"container":"pinguin-pinguin-e4c2f3738431cdfa50852d58aa19681be02ea343b2deb0a9993a618870df5d26","level":"warning","msg":"Could not find network named 'proxy' for container '/web-pinguin'! Maybe you're missing the project's prefix in the label? Defaulting to first available network.","providerName":"docker","serviceName":"web-pinguin","time":"2020-09-02T12:33:38+07:00"}
+{"level":"debug","msg":"Configuration received from provider docker: {\"http\":{\"routers\":{\"web-pinguin\":{\"service\":\"web-pinguin\",\"rule\":\"Host(`pinguin.localhost`)\"}},\"services\":{\"web-pinguin\":{\"loadBalancer\":{\"servers\":[{\"url\":\"http://172.19.0.2:80\"}],\"passHostHeader\":true}}}},\"tcp\":{},\"udp\":{}}","providerName":"docker","time":"2020-09-02T12:33:38+07:00"}
+{"level":"debug","msg":"No entryPoint defined for this router, using the default one(s) instead: [http https]","routerName":"web-pinguin","time":"2020-09-02T12:33:38+07:00"}
+{"entryPointName":"http","level":"debug","middlewareName":"pipelining","middlewareType":"Pipelining","msg":"Creating middleware","routerName":"web-pinguin@docker","serviceName":"web-pinguin","time":"2020-09-02T12:33:38+07:00"}
+{"entryPointName":"http","level":"debug","msg":"Creating load-balancer","routerName":"web-pinguin@docker","serviceName":"web-pinguin","time":"2020-09-02T12:33:38+07:00"}
+{"entryPointName":"http","level":"debug","msg":"Creating server 0 http://172.19.0.2:80","routerName":"web-pinguin@docker","serverName":0,"serviceName":"web-pinguin","time":"2020-09-02T12:33:38+07:00"}
+{"entryPointName":"http","level":"debug","middlewareName":"tracing","middlewareType":"TracingForwarder","msg":"Added outgoing tracing middleware web-pinguin","routerName":"web-pinguin@docker","time":"2020-09-02T12:33:38+07:00"}
+{"entryPointName":"http","level":"debug","middlewareName":"traefik-internal-recovery","middlewareType":"Recovery","msg":"Creating middleware","time":"2020-09-02T12:33:38+07:00"}
+{"entryPointName":"https","level":"debug","middlewareName":"traefik-internal-recovery","middlewareType":"Recovery","msg":"Creating middleware","time":"2020-09-02T12:33:38+07:00"}
+{"level":"debug","msg":"No default certificate, generating one","time":"2020-09-02T12:33:38+07:00"}
+{"level":"warning","msg":"Error checking new version: Get \"https://update.traefik.io/repos/containous/traefik/releases\": dial tcp: lookup update.traefik.io on 127.0.0.11:53: read udp 127.0.0.1:33211-\u003e127.0.0.11:53: i/o timeout","time":"2020-09-02T12:44:13+07:00"}
+{"level":"info","msg":"Traefik version 2.2.8 built on 2020-07-28T15:46:03Z","time":"2020-09-02T12:47:34+07:00"}
+{"level":"debug","msg":"Static configuration loaded {\"global\":{\"checkNewVersion\":true},\"serversTransport\":{\"maxIdleConnsPerHost\":200},\"entryPoints\":{\"http\":{\"address\":\":80\",\"transport\":{\"lifeCycle\":{\"graceTimeOut\":10000000000},\"respondingTimeouts\":{\"idleTimeout\":180000000000}},\"forwardedHeaders\":{},\"http\":{}},\"https\":{\"address\":\":443\",\"transport\":{\"lifeCycle\":{\"graceTimeOut\":10000000000},\"respondingTimeouts\":{\"idleTimeout\":180000000000}},\"forwardedHeaders\":{},\"http\":{}}},\"providers\":{\"providersThrottleDuration\":2000000000,\"docker\":{\"watch\":true,\"endpoint\":\"unix:///var/run/docker.sock\",\"defaultRule\":\"Host(`{{ normalize .Name }}`)\",\"swarmModeRefreshSeconds\":15000000000}},\"log\":{\"level\":\"DEBUG\",\"filePath\":\"/var/log/traefik/traefik.log\",\"format\":\"json\"},\"accessLog\":{\"filePath\":\"/var/log/traefik/access.log\",\"format\":\"json\",\"filters\":{},\"fields\":{\"defaultMode\":\"keep\",\"headers\":{\"defaultMode\":\"drop\"}}}}","time":"2020-09-02T12:47:34+07:00"}
+{"level":"info","msg":"\nStats collection is disabled.\nHelp us improve Traefik by turning this feature on :)\nMore details on: https://docs.traefik.io/contributing/data-collection/\n","time":"2020-09-02T12:47:34+07:00"}
+{"level":"info","msg":"Starting provider aggregator.ProviderAggregator {}","time":"2020-09-02T12:47:34+07:00"}
+{"entryPointName":"https","level":"debug","msg":"Start TCP Server","time":"2020-09-02T12:47:34+07:00"}
+{"entryPointName":"http","level":"debug","msg":"Start TCP Server","time":"2020-09-02T12:47:34+07:00"}
+{"level":"info","msg":"Starting provider *docker.Provider {\"watch\":true,\"endpoint\":\"unix:///var/run/docker.sock\",\"defaultRule\":\"Host(`{{ normalize .Name }}`)\",\"swarmModeRefreshSeconds\":15000000000}","time":"2020-09-02T12:47:34+07:00"}
+{"level":"info","msg":"Starting provider *traefik.Provider {}","time":"2020-09-02T12:47:34+07:00"}
+{"level":"debug","msg":"Configuration received from provider internal: {\"http\":{\"services\":{\"noop\":{}}},\"tcp\":{},\"tls\":{}}","providerName":"internal","time":"2020-09-02T12:47:34+07:00"}
+{"level":"debug","msg":"No default certificate, generating one","time":"2020-09-02T12:47:34+07:00"}
+{"level":"debug","msg":"Provider connection established with docker 19.03.12 (API 1.40)","providerName":"docker","time":"2020-09-02T12:47:34+07:00"}
+{"container":"traefik-traefik-1f12f086f6d9c9bdb207e918f2b8e037ce05733906ffc6a6c68304d0f6494d1f","level":"debug","msg":"Filtering disabled container","providerName":"docker","time":"2020-09-02T12:47:34+07:00"}
+{"container":"pinguin-pinguin-e4c2f3738431cdfa50852d58aa19681be02ea343b2deb0a9993a618870df5d26","level":"warning","msg":"Could not find network named 'proxy' for container '/web-pinguin'! Maybe you're missing the project's prefix in the label? Defaulting to first available network.","providerName":"docker","serviceName":"web-pinguin","time":"2020-09-02T12:47:34+07:00"}
+{"level":"debug","msg":"Configuration received from provider docker: {\"http\":{\"routers\":{\"web-pinguin\":{\"service\":\"web-pinguin\",\"rule\":\"Host(`pinguin.localhost`)\"}},\"services\":{\"web-pinguin\":{\"loadBalancer\":{\"servers\":[{\"url\":\"http://172.19.0.3:80\"}],\"passHostHeader\":true}}}},\"tcp\":{},\"udp\":{}}","providerName":"docker","time":"2020-09-02T12:47:34+07:00"}
+{"level":"debug","msg":"No entryPoint defined for this router, using the default one(s) instead: [http https]","routerName":"web-pinguin","time":"2020-09-02T12:47:34+07:00"}
+{"entryPointName":"http","level":"debug","middlewareName":"pipelining","middlewareType":"Pipelining","msg":"Creating middleware","routerName":"web-pinguin@docker","serviceName":"web-pinguin","time":"2020-09-02T12:47:34+07:00"}
+{"entryPointName":"http","level":"debug","msg":"Creating load-balancer","routerName":"web-pinguin@docker","serviceName":"web-pinguin","time":"2020-09-02T12:47:34+07:00"}
+{"entryPointName":"http","level":"debug","msg":"Creating server 0 http://172.19.0.3:80","routerName":"web-pinguin@docker","serverName":0,"serviceName":"web-pinguin","time":"2020-09-02T12:47:34+07:00"}
+{"entryPointName":"http","level":"debug","middlewareName":"tracing","middlewareType":"TracingForwarder","msg":"Added outgoing tracing middleware web-pinguin","routerName":"web-pinguin@docker","time":"2020-09-02T12:47:34+07:00"}
+{"entryPointName":"http","level":"debug","middlewareName":"traefik-internal-recovery","middlewareType":"Recovery","msg":"Creating middleware","time":"2020-09-02T12:47:34+07:00"}
+{"entryPointName":"https","level":"debug","middlewareName":"traefik-internal-recovery","middlewareType":"Recovery","msg":"Creating middleware","time":"2020-09-02T12:47:34+07:00"}
+{"level":"debug","msg":"No default certificate, generating one","time":"2020-09-02T12:47:34+07:00"}
+{"level":"info","msg":"I have to go...","time":"2020-09-02T17:00:12+07:00"}
+{"level":"info","msg":"Stopping server gracefully","time":"2020-09-02T17:00:12+07:00"}
+{"entryPointName":"http","level":"debug","msg":"Waiting 10s seconds before killing connections.","time":"2020-09-02T17:00:12+07:00"}
+{"entryPointName":"http","level":"error","msg":"accept tcp [::]:80: use of closed network connection","time":"2020-09-02T17:00:12+07:00"}
+{"entryPointName":"https","level":"debug","msg":"Waiting 10s seconds before killing connections.","time":"2020-09-02T17:00:12+07:00"}
+{"entryPointName":"https","level":"error","msg":"accept tcp [::]:443: use of closed network connection","time":"2020-09-02T17:00:12+07:00"}
+{"entryPointName":"https","level":"error","msg":"close tcp [::]:443: use of closed network connection","time":"2020-09-02T17:00:12+07:00"}
+{"entryPointName":"https","level":"debug","msg":"Entry point https closed","time":"2020-09-02T17:00:12+07:00"}
+{"entryPointName":"http","level":"error","msg":"close tcp [::]:80: use of closed network connection","time":"2020-09-02T17:00:12+07:00"}
+{"entryPointName":"http","level":"debug","msg":"Entry point http closed","time":"2020-09-02T17:00:12+07:00"}
+{"level":"info","msg":"Server stopped","time":"2020-09-02T17:00:12+07:00"}
+{"level":"info","msg":"Shutting down","time":"2020-09-02T17:00:12+07:00"}
+{"level":"info","msg":"Traefik version 2.2.8 built on 2020-07-28T15:46:03Z","time":"2020-09-02T20:54:21+07:00"}
+{"level":"debug","msg":"Static configuration loaded {\"global\":{\"checkNewVersion\":true},\"serversTransport\":{\"maxIdleConnsPerHost\":200},\"entryPoints\":{\"http\":{\"address\":\":80\",\"transport\":{\"lifeCycle\":{\"graceTimeOut\":10000000000},\"respondingTimeouts\":{\"idleTimeout\":180000000000}},\"forwardedHeaders\":{},\"http\":{}},\"https\":{\"address\":\":443\",\"transport\":{\"lifeCycle\":{\"graceTimeOut\":10000000000},\"respondingTimeouts\":{\"idleTimeout\":180000000000}},\"forwardedHeaders\":{},\"http\":{}}},\"providers\":{\"providersThrottleDuration\":2000000000,\"docker\":{\"watch\":true,\"endpoint\":\"unix:///var/run/docker.sock\",\"defaultRule\":\"Host(`{{ normalize .Name }}`)\",\"swarmModeRefreshSeconds\":15000000000}},\"log\":{\"level\":\"DEBUG\",\"filePath\":\"/var/log/traefik/traefik.log\",\"format\":\"json\"},\"accessLog\":{\"filePath\":\"/var/log/traefik/access.log\",\"format\":\"json\",\"filters\":{},\"fields\":{\"defaultMode\":\"keep\",\"headers\":{\"defaultMode\":\"drop\"}}}}","time":"2020-09-02T20:54:21+07:00"}
+{"level":"info","msg":"\nStats collection is disabled.\nHelp us improve Traefik by turning this feature on :)\nMore details on: https://docs.traefik.io/contributing/data-collection/\n","time":"2020-09-02T20:54:21+07:00"}
+{"level":"info","msg":"Starting provider aggregator.ProviderAggregator {}","time":"2020-09-02T20:54:21+07:00"}
+{"entryPointName":"https","level":"debug","msg":"Start TCP Server","time":"2020-09-02T20:54:21+07:00"}
+{"entryPointName":"http","level":"debug","msg":"Start TCP Server","time":"2020-09-02T20:54:21+07:00"}
+{"level":"info","msg":"Starting provider *docker.Provider {\"watch\":true,\"endpoint\":\"unix:///var/run/docker.sock\",\"defaultRule\":\"Host(`{{ normalize .Name }}`)\",\"swarmModeRefreshSeconds\":15000000000}","time":"2020-09-02T20:54:21+07:00"}
+{"level":"info","msg":"Starting provider *traefik.Provider {}","time":"2020-09-02T20:54:21+07:00"}
+{"level":"debug","msg":"Configuration received from provider internal: {\"http\":{\"services\":{\"noop\":{}}},\"tcp\":{},\"tls\":{}}","providerName":"internal","time":"2020-09-02T20:54:21+07:00"}
+{"level":"debug","msg":"No default certificate, generating one","time":"2020-09-02T20:54:21+07:00"}
+{"level":"debug","msg":"Provider connection established with docker 19.03.12 (API 1.40)","providerName":"docker","time":"2020-09-02T20:54:21+07:00"}
+{"container":"traefik-traefik-1f12f086f6d9c9bdb207e918f2b8e037ce05733906ffc6a6c68304d0f6494d1f","level":"debug","msg":"Filtering disabled container","providerName":"docker","time":"2020-09-02T20:54:21+07:00"}
+{"container":"pinguin-pinguin-e4c2f3738431cdfa50852d58aa19681be02ea343b2deb0a9993a618870df5d26","level":"warning","msg":"Could not find network named 'proxy' for container '/web-pinguin'! Maybe you're missing the project's prefix in the label? Defaulting to first available network.","providerName":"docker","serviceName":"web-pinguin","time":"2020-09-02T20:54:21+07:00"}
+{"level":"debug","msg":"Configuration received from provider docker: {\"http\":{\"routers\":{\"web-pinguin\":{\"service\":\"web-pinguin\",\"rule\":\"Host(`pinguin.localhost`)\"}},\"services\":{\"web-pinguin\":{\"loadBalancer\":{\"servers\":[{\"url\":\"http://172.19.0.3:80\"}],\"passHostHeader\":true}}}},\"tcp\":{},\"udp\":{}}","providerName":"docker","time":"2020-09-02T20:54:21+07:00"}
+{"level":"debug","msg":"No entryPoint defined for this router, using the default one(s) instead: [http https]","routerName":"web-pinguin","time":"2020-09-02T20:54:21+07:00"}
+{"entryPointName":"http","level":"debug","middlewareName":"pipelining","middlewareType":"Pipelining","msg":"Creating middleware","routerName":"web-pinguin@docker","serviceName":"web-pinguin","time":"2020-09-02T20:54:21+07:00"}
+{"entryPointName":"http","level":"debug","msg":"Creating load-balancer","routerName":"web-pinguin@docker","serviceName":"web-pinguin","time":"2020-09-02T20:54:21+07:00"}
+{"entryPointName":"http","level":"debug","msg":"Creating server 0 http://172.19.0.3:80","routerName":"web-pinguin@docker","serverName":0,"serviceName":"web-pinguin","time":"2020-09-02T20:54:21+07:00"}
+{"entryPointName":"http","level":"debug","middlewareName":"tracing","middlewareType":"TracingForwarder","msg":"Added outgoing tracing middleware web-pinguin","routerName":"web-pinguin@docker","time":"2020-09-02T20:54:21+07:00"}
+{"entryPointName":"http","level":"debug","middlewareName":"traefik-internal-recovery","middlewareType":"Recovery","msg":"Creating middleware","time":"2020-09-02T20:54:21+07:00"}
+{"entryPointName":"https","level":"debug","middlewareName":"traefik-internal-recovery","middlewareType":"Recovery","msg":"Creating middleware","time":"2020-09-02T20:54:21+07:00"}
+{"level":"debug","msg":"No default certificate, generating one","time":"2020-09-02T20:54:21+07:00"}
+{"level":"info","msg":"I have to go...","time":"2020-09-02T21:27:08+07:00"}
+{"level":"info","msg":"Stopping server gracefully","time":"2020-09-02T21:27:08+07:00"}
+{"entryPointName":"http","level":"debug","msg":"Waiting 10s seconds before killing connections.","time":"2020-09-02T21:27:08+07:00"}
+{"entryPointName":"https","level":"debug","msg":"Waiting 10s seconds before killing connections.","time":"2020-09-02T21:27:08+07:00"}
+{"entryPointName":"http","level":"error","msg":"close tcp [::]:80: use of closed network connection","time":"2020-09-02T21:27:08+07:00"}
+{"entryPointName":"http","level":"debug","msg":"Entry point http closed","time":"2020-09-02T21:27:08+07:00"}
+{"entryPointName":"http","level":"error","msg":"accept tcp [::]:80: use of closed network connection","time":"2020-09-02T21:27:08+07:00"}
+{"entryPointName":"https","level":"error","msg":"close tcp [::]:443: use of closed network connection","time":"2020-09-02T21:27:08+07:00"}
+{"entryPointName":"https","level":"error","msg":"accept tcp [::]:443: use of closed network connection","time":"2020-09-02T21:27:08+07:00"}
+{"entryPointName":"https","level":"debug","msg":"Entry point https closed","time":"2020-09-02T21:27:08+07:00"}
+{"level":"info","msg":"Server stopped","time":"2020-09-02T21:27:08+07:00"}
+{"level":"info","msg":"Shutting down","time":"2020-09-02T21:27:08+07:00"}
+{"level":"error","msg":"Cannot connect to docker server context canceled","providerName":"docker","time":"2020-09-02T21:27:08+07:00"}
