@@ -1,7 +1,6 @@
 version: "3.3"
 
 services:
-
   traefik:
     image: "traefik:latest"
     container_name: "traefik"
@@ -9,10 +8,15 @@ services:
     #   - "traefik.enable=false"
     environment:
        - "TZ=Asia/Jakarta"
+    labels:
+      - "traefik.http.routers.api.rule=Host(`traefik.doscom.org`)"
+      - "traefik.http.routers.api.service=api@internal"
+      - "traefik.http.routers.api.middlewares=traefikauth"
+      - "traefik.http.middlewares.traefikauth.basicauth.usersfile=/etc/traefik/auth"
     ports:
-      - 80:80
-      - 443:443
-      - 2000:8080
+      - 8000:80
+      - 4433:443
+      - 8080:8080
     restart: always
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
@@ -24,4 +28,4 @@ services:
 networks:
   proxy:
     external:
-      name: web_proxy
+      name: link-utama
