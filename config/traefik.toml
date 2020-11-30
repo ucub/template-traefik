@@ -12,7 +12,7 @@
 
 ##Enable LetsEncrypt
 [certificatesResolvers.traefik.acme]
-  email = "yusufsanjaya@gmail.com"
+  email = "your-email"
   storage = "acme.json"
   [certificatesResolvers.traefik.acme.httpChallenge]
     # used during the challenge

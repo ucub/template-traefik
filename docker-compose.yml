@@ -4,8 +4,6 @@ services:
   traefik:
     image: "traefik:latest"
     container_name: "traefik"
-    # labels:
-    #   - "traefik.enable=false"
     environment:
        - "TZ=Asia/Jakarta"
     labels:
